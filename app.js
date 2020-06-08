@@ -16,7 +16,7 @@ const checkDead = setInterval(function(){
     parseInt(window.getComputedStyle(character).getPropertyValue("top"));
     let blockLeft = 
     parseInt(window.getComputedStyle(block).getPropertyValue("left"));
-    if(blockLeft<20 && blockLeft>0 && characterTop>240){
+    if(blockLeft<20 && blockLeft>0 && characterTop>225){
         document.getElementById("dead").play();
         block.style.animation = "none";
         block.style.display = "none";
