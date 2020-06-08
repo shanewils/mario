@@ -1,0 +1,58 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#game { 
+    width: 700px;
+    height: 397px;
+    border: 1px solid black;
+    margin: 0 auto;
+    margin-top: 100px;
+    background-image: url(./img/background.jpg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#character {
+    width: 60px;
+    height: 100px;
+    background-image: url(./img/mario.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    top: 250px; 
+   
+}
+
+.animate{
+    animation: jump 500ms;
+}
+
+@keyframes jump{
+    0%{top: 250px;}
+    30%{top: 150px;}
+    70%{top: 150px;}
+    100%{top: 250px;}
+}
+
+#block {
+    width: 40px;
+    height: 40px;
+    background-image: url(./img/billy.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    top: 200px;
+    left: 960px;
+    animation: block 2s infinite linear;
+}
+
+@keyframes block {
+    0%{left:960px;}
+    100%{left:-80px;}
+}
