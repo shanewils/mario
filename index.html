@@ -5,22 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <audio id="jump" src="./sounds/jump.wav"></audio>
-    <audio id="dead" src="./sounds/Mario Death Sound Effect.mp3"></audio>
-    <audio id="coin" src="./sounds/[Super Mario Bros] Coin Sound Effect [Free Ringtone Download].mp3"></audio>
-    <audio id="theme" >
-        <source src="./sounds/Super Mario Bros. Theme Song.mp3" type="audio/mpeg">
-      </audio>
-    
-    
+  
+
 </head>
 <body>
     <div id="game">
+        <audio id="jump" src="./sounds/jump.wav"></audio>
+        <audio id="dead" src="./sounds/Mario Death Sound Effect.mp3"></audio>
+        <audio id="point" src="./sounds/[Super Mario Bros] Coin Sound Effect [Free Ringtone Download].mp3"></audio>
+        <audio id="theme" >
+            <source src="./sounds/Super Mario Bros. Theme Song.mp3" type="audio/mpeg" autoplay>
+          </audio>
         <div id="background"></div>
         <div id="character"></div>
         <div id="coin"></div>
         <div id="block"></div>
     </div>
+    <div id="score"><img src="./img/coin.gif" alt=""></div>
 </body>
 <script src="app.js"></script>
 </html>

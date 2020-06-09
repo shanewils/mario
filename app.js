@@ -1,6 +1,7 @@
 let character = document.getElementById("character");
 let block = document.getElementById("block");
 let coin = document.getElementById("coin");
+let score = 0;
 
 const jump = () =>{
     character.classList.add("animate");
@@ -11,7 +12,6 @@ const jump = () =>{
 }   
 
 const checkDead = setInterval(function(){
-    console.log(window.getComputedStyle(block).getPropertyValue("left"))
     let characterTop = 
     parseInt(window.getComputedStyle(character).getPropertyValue("top"));
     let blockLeft = 
@@ -26,21 +26,23 @@ const checkDead = setInterval(function(){
 },5);
 
 const checkCoin = setInterval(function(){
-    // console.log(window.getComputedStyle(coin).getPropertyValue("left"))
     let characterTopCoin = 
     parseInt(window.getComputedStyle(character).getPropertyValue("top"));
     let coinLeft = 
     parseInt(window.getComputedStyle(coin).getPropertyValue("left"));
     if(coinLeft<40 && coinLeft>=0 && characterTopCoin<225){
-        // document.getElementById("coin").play();
-        // coin.style.animation = "none";
-        // coin.style.display = "none";
-        alert("vmbgfk;dgbm")
-        
+        document.getElementById("point").play();
+        coin.style.animation = "none";
+        coin.style.display = "none";
+        score += 1;
+        updateHtmlScore
+        console.log(score)
     }
-    // console.log(window.getComputedStyle(character).getPropertyValue("top"))
+    
 
-    
-    
 },5);
 
+const updateHtmlScore = () => {
+    document.getElementById("score").innerHTML =
+      "<p>SCORE " + "<span>" + score + "</span>" + "</p>";
+  };

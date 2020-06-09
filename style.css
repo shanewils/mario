@@ -15,7 +15,7 @@
     background-position: 0 0;
     background-repeat: repeat-x;
     animation: bg 15s linear infinite;
-    background-color: blue;
+    
     
 }@keyframes bg {
    from {
@@ -27,7 +27,6 @@
 }
 
 #character {
-    border: blue solid 1px;
     width: 60px;
     height: 100px;
     background-image: url(./img/supermario_hlq6z1q4.gif);
@@ -52,7 +51,6 @@
 
 #block {
     width: 40px;
-    border: blue solid 1px;
     height: 40px;
     background-image: url(./img/billy.png);
     background-position: center;
@@ -70,7 +68,6 @@
 }
 
 #coin {
-    border: red solid 1px;
     width: 40px;
     height: 40px;
     background-image: url(./img/coin.gif);
@@ -89,9 +86,11 @@
 }
 
 #score {
-    position: relative;
-    top: 0;
-    margin-left: 10px;
+    display: inline-flex;
+    justify-content: center;
+    align-self: center;
+    margin: 0 auto;
+    border: blue 1px solid;
 }
 
 
