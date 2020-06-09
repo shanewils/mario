@@ -2,6 +2,7 @@ let character = document.getElementById("character");
 let block = document.getElementById("block");
 let coin = document.getElementById("coin");
 let score = 0;
+let isCoin = true;
 
 const jump = () =>{
     character.classList.add("animate");
@@ -16,7 +17,7 @@ const checkDead = setInterval(function(){
     parseInt(window.getComputedStyle(character).getPropertyValue("top"));
     let blockLeft = 
     parseInt(window.getComputedStyle(block).getPropertyValue("left"));
-    if(blockLeft<40 && blockLeft>0 && characterTop>225){
+    if(blockLeft<40 && blockLeft>0 && characterTop>170){
         document.getElementById("theme").pause();
         document.getElementById("dead").play();
         block.style.animation = "none";
@@ -34,15 +35,25 @@ const checkCoin = setInterval(function(){
         document.getElementById("point").play();
         coin.style.animation = "none";
         coin.style.display = "none";
+        isCoin = false;
         score += 1;
-        updateHtmlScore
-        console.log(score)
+        updateHtmlScore;
+        console.log(score);
+    }if (isCoin = false){
+        coin.style.animation = "run";
+        coin.style.display = "static";
+        isCoin = true;
     }
     
-
 },5);
 
 const updateHtmlScore = () => {
     document.getElementById("score").innerHTML =
       "<p>SCORE " + "<span>" + score + "</span>" + "</p>";
   };
+
+  function init(){
+      document.reload();
+      score = 0;
+      isCoin = true;
+  }

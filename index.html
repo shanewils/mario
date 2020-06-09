@@ -16,12 +16,16 @@
         <audio id="theme" >
             <source src="./sounds/Super Mario Bros. Theme Song.mp3" type="audio/mpeg" autoplay>
           </audio>
+          <h1>Super Mario Run</h1>
         <div id="background"></div>
         <div id="character"></div>
         <div id="coin"></div>
         <div id="block"></div>
     </div>
-    <div id="score"><img src="./img/coin.gif" alt=""></div>
+    <div id="score"><h2>Score:<img src="./img/coin.gif" alt="">X <span></span></h2></div>
+    <div id="box">
+        <button id="restart" onclick="init()">Restart</button>
+    </div>
 </body>
 <script src="app.js"></script>
 </html>
