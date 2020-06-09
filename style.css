@@ -27,6 +27,7 @@
 }
 
 #character {
+    border: blue solid 1px;
     width: 60px;
     height: 100px;
     background-image: url(./img/supermario_hlq6z1q4.gif);
@@ -51,18 +52,51 @@
 
 #block {
     width: 40px;
+    border: blue solid 1px;
     height: 40px;
     background-image: url(./img/billy.png);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
     position: relative;
-    top: 175px;
-    left: 960px;
-    animation: block 2s infinite linear;
+    top: 135px;
+    left: 660px;
+    animation: billy 2s infinite linear;
 }
 
-@keyframes block {
-    0%{left:960px;}
+@keyframes billy {
+    0%{left:700px;}
     100%{left:-80px;}
+}
+
+#coin {
+    border: red solid 1px;
+    width: 40px;
+    height: 40px;
+    background-image: url(./img/coin.gif);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    top: 100px;
+    left: 660px;
+    animation: coin 4s infinite linear;
+}
+
+@keyframes coin {
+    0%{left:700px;}
+    100%{left:-80px;}
+}
+
+#score {
+    position: relative;
+    top: 0;
+    margin-left: 10px;
+}
+
+
+#score img {
+    height: 40px;
+    width: 40px;
+   
 }
