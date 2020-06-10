@@ -2,14 +2,15 @@ let character = document.getElementById("character");
 let block = document.getElementById("block");
 let coin = document.getElementById("coin");
 let score = 0;
-let isCoin = true;
-
 
 
 function refreshData(){
-    x = 2;  // 5 Seconds
+    x = 2;  
     document.getElementById("shoot").play(); 
     setTimeout(refreshData, x*1000);
+    if (score >=3){;
+        x = 1;
+    }
 }
 
 refreshData(); 
@@ -64,12 +65,6 @@ const checkCoin = setInterval(function(){
         coin.style.visibility = "visible";
     }
 },5);
-
-
-if(isCoin = false && coinLeft >=0) {
-    coin.style.visibility = "visible";
-    isCoin = true;
-}
 
 const updateHtmlScore = () => {
     document.getElementById("scoreVal").innerHTML = score;

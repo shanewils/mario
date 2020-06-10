@@ -126,4 +126,10 @@ h1 {
   align-items: center;
   position: relative;
   margin-top: 20px;
+  height: 30px;
+}
+
+#box button {
+    border:none;
+    height: 30px;
 }
