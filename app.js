@@ -6,19 +6,13 @@ let isCoin = true;
 
 
 
-function refreshData()
-{
+function refreshData(){
     x = 2;  // 5 Seconds
-
     document.getElementById("shoot").play(); 
     setTimeout(refreshData, x*1000);
 }
 
-
 refreshData(); 
-
- 
-    
 
 const jump = () =>{
     character.classList.add("animate");
@@ -40,34 +34,45 @@ const checkDead = setInterval(function(){
         block.style.visibility = "hidden";
         coin.style.animation = "none";
         coin.style.visibility = "hidden";
-        if (confirm("Mama Mia! You scored  Would you like to try again?") == true) {
+        const gameOverMsg = "Mama Mia! You scored " + score + " Would you like to try again?";
+
+        if (confirm(gameOverMsg) == true) {
             init();
         }
     }
 },5);
+
+let coinGrabbed = false;
 
 const checkCoin = setInterval(function(){
     let characterTopCoin = 
     parseInt(window.getComputedStyle(character).getPropertyValue("top"));
     let coinLeft = 
     parseInt(window.getComputedStyle(coin).getPropertyValue("left"));
-    if(coinLeft<40 && coinLeft>=0 && characterTopCoin<170){
+    if(coinLeft<40 && coinLeft>=0 && characterTopCoin<170 && !coinGrabbed){
+        // console.log('triggered')
         document.getElementById("point").play();
         coin.style.visibility = "hidden";
         isCoin = false;
-        score += 1;
-        updateHtmlScore;
-        console.log(score);
-    if (isCoin = false && coinLeft >=0) {
-        coin.style.visibility = "visible";
-        isCoin = true;
+        score++;
+        updateHtmlScore();
+        coinGrabbed =true; 
+        console.log(coinGrabbed);
     }
-}
+    if (coinLeft > 620) {
+        coinGrabbed = false;
+        coin.style.visibility = "visible";
+    }
 },5);
 
+
+if(isCoin = false && coinLeft >=0) {
+    coin.style.visibility = "visible";
+    isCoin = true;
+}
+
 const updateHtmlScore = () => {
-    document.getElementById("score").innerHTML =
-      "<p>SCORE " + "<span>" + score + "</span>" + "</p>";
+    document.getElementById("scoreVal").innerHTML = score;
   };
 
   function init(){

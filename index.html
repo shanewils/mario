@@ -13,7 +13,7 @@
         <audio id="point" src="./sounds/[Super Mario Bros] Coin Sound Effect [Free Ringtone Download].mp3" preload="auto"></audio>
         <audio id="jump" src="./sounds/jump.wav"></audio>
         <audio id="dead" src="./sounds/Mario Death Sound Effect.mp3" preload="auto"></audio>
-        <audio autoplay id="theme" loop ="loop"><source src="./sounds/Mario Theme.mp3"></audio>
+        <audio  id="theme" loop ="loop" autoplay><source src="./sounds/Mario Theme.mp3"></audio>
         <audio id="shoot" autoplay src="./sounds/thud.wav"></audio>
         <h1>Super Mario Run</h1>
         <div id="background"></div>
@@ -21,7 +21,7 @@
         <div id="coin"></div>
         <div id="block"></div>
     </div>
-    <div id="score"><h2>Score:<img src="./img/coin.gif" alt="">X 0<span></span></h2></div>
+    <div id="score"><h2>Score:<img src="./img/coin.gif" alt="">X </h2><span id="scoreVal">0</span></div>
     <div id="box">
         <button id="restart" onclick="init()">Restart</button>
     </div>
