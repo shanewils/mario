@@ -8,7 +8,7 @@ const jump = () =>{
     character.classList.add("animate");
     document.getElementById("jump").play();
     setTimeout(function(){
-            character.classList.remove("animate");    
+    character.classList.remove("animate");    
     },500);
 }   
 
@@ -22,7 +22,9 @@ const checkDead = setInterval(function(){
         document.getElementById("dead").play();
         block.style.animation = "none";
         block.style.visibility = "hidden";
-        alert("Mama Mia!.");
+        if (confirm("Mama Mia! You scored  Would you like to try again?") == true) {
+            init;
+        }
     }
 },5);
 
