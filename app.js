@@ -21,7 +21,7 @@ const checkDead = setInterval(function(){
         document.getElementById("theme").pause();
         document.getElementById("dead").play();
         block.style.animation = "none";
-        block.style.display = "none";
+        block.style.visibility = "hidden";
         alert("Mama Mia!.");
     }
 },5);
@@ -31,10 +31,10 @@ const checkCoin = setInterval(function(){
     parseInt(window.getComputedStyle(character).getPropertyValue("top"));
     let coinLeft = 
     parseInt(window.getComputedStyle(coin).getPropertyValue("left"));
-    if(coinLeft<40 && coinLeft>=0 && characterTopCoin<225){
+    if(coinLeft<40 && coinLeft>=0 && characterTopCoin<170){
         document.getElementById("point").play();
         coin.style.animation = "none";
-        coin.style.display = "none";
+        coin.style.visibility = "hidden";
         isCoin = false;
         score += 1;
         updateHtmlScore;
@@ -53,7 +53,5 @@ const updateHtmlScore = () => {
   };
 
   function init(){
-      document.reload();
-      score = 0;
-      isCoin = true;
+    location.reload();
   }

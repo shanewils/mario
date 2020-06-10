@@ -87,7 +87,7 @@ h1 {
     background-size: contain;
     background-repeat: no-repeat;
     position: relative;
-    top: 100px;
+    top: 70px;
     left: 660px;
     animation: coin 4s infinite linear;
 }
