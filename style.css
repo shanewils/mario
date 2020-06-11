@@ -75,7 +75,7 @@ h1 {
 
 @keyframes billy {
     0%{left:700px;}
-    100%{left:-80px;}
+    100%{left:-10px;}
 }
 
 #coin {
@@ -93,7 +93,26 @@ h1 {
 
 @keyframes coin {
     0%{left:700px;}
-    100%{left:-80px;}
+    100%{left:-10px;}
+}
+
+
+#pipe {
+    width: 80px;
+    height: 55px;
+    background-image: url(./img/pipe.gif);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    top: 35px;
+    left: 600px;
+    animation: pipe 3s infinite linear;
+}
+
+@keyframes pipe {
+    0%{left:600px;}
+    100%{left:-10px;}
 }
 
 #score {

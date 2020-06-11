@@ -43,6 +43,26 @@ const checkDead = setInterval(function(){
     }
 },5);
 
+const checkPipe = setInterval(function(){
+    let characterTopPipe = 
+    parseInt(window.getComputedStyle(character).getPropertyValue("top"));
+    let pipeLeft = 
+    parseInt(window.getComputedStyle(pipe).getPropertyValue("left"));
+    if(pipeLeft<40 && pipeLeft>0 && characterTopPipe>170){
+        document.getElementById("theme").pause();
+        document.getElementById("dead").play();
+        block.style.animation = "none";
+        block.style.visibility = "hidden";
+        coin.style.animation = "none";
+        coin.style.visibility = "hidden";
+        const gameOverMsg = "Mama Mia! You scored " + score + " Would you like to try again?";
+
+        if (confirm(gameOverMsg) == true) {
+            init();
+        }
+    }
+},5);
+
 let coinGrabbed = false;
 
 const checkCoin = setInterval(function(){
