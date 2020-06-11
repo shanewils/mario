@@ -34,7 +34,7 @@ const checkDead = setInterval(function(){
         block.style.animation = "none";
         block.style.visibility = "hidden";
         coin.style.animation = "none";
-        coin.style.visibility = "hidden";
+        coin.style.display = "none";
         pipe.style.animation = "none";
         pipe.style.visibility = "hidden";
         character.style.visibility = "hidden";
@@ -47,8 +47,8 @@ const checkDead = setInterval(function(){
             document.getElementById("coffind").play();
             coffin.style.display = "block";
             bg.style.display = "none";
-            
             coin.style.visibility = "hidden";
+            
         }
     }
 },5);
@@ -64,11 +64,21 @@ const checkPipe = setInterval(function(){
         block.style.animation = "none";
         block.style.visibility = "hidden";
         coin.style.animation = "none";
-        coin.style.visibility = "hidden";
+        coin.style.display = "none";
+        pipe.style.animation = "none";
+        pipe.style.visibility = "hidden";
+        character.style.visibility = "hidden";
         const gameOverMsg = "Mama Mia! You scored " + score + " Would you like to try again?";
 
         if (confirm(gameOverMsg) == true) {
             init();
+        }
+        if (confirm(gameOverMsg) == false) {
+            document.getElementById("coffind").play();
+            coffin.style.display = "block";
+            bg.style.display = "none";
+            coin.style.visibility = "hidden";
+            
         }
     }
 },5);
