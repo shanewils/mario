@@ -2,8 +2,13 @@ let character = document.getElementById("character");
 let block = document.getElementById("block");
 let coin = document.getElementById("coin");
 let score = 0;
+let gameOver = false;
 
 function refreshData(){
+    if (gameOver) {
+        return null;
+    }
+
     x = 2;  
     document.getElementById("shoot").play(); 
     setTimeout(refreshData, x*1000);    
@@ -30,6 +35,9 @@ const checkDead = setInterval(function(){
     let blockLeft = 
     parseInt(window.getComputedStyle(block).getPropertyValue("left"));
     if(blockLeft<40 && blockLeft>0 && characterTop>170){
+
+        gameOver = true;
+
         document.getElementById("theme").pause();
         document.getElementById("dead").play();
         block.style.animation = "none";
@@ -59,9 +67,12 @@ const checkPipe = setInterval(function(){
     let pipeLeft = 
     parseInt(window.getComputedStyle(pipe).getPropertyValue("left"));
     if(pipeLeft<40 && pipeLeft>0 && characterTopPipe>170){
+        
+        gameOver = true;
+
         document.getElementById("theme").pause();
         document.getElementById("dead").play();
-       block.style.animation = "none";
+        block.style.animation = "none";
         block.style.visibility = "hidden";
         coin.style.animation = "none";
         coin.style.display = "none";
@@ -78,8 +89,6 @@ const checkPipe = setInterval(function(){
             coffin.style.display = "block";
             bg.style.display = "none";
             coin.style.visibility = "hidden";
-            
-            
         }
     }
 },5);
@@ -112,5 +121,7 @@ const updateHtmlScore = () => {
   };
 
   function init(){
+    gameOver = false;
+    refreshData();
     location.reload();
   }

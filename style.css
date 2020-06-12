@@ -33,9 +33,13 @@ h1 {
     width: 700px;
     height: 357px;
     background-image: url(./img/dead.gif);
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
+    background-color: rgb(73, 73, 73);
+    background-position: center;
     position: relative;
+    align-content: center;
+    justify-content: center;
     bottom: 50px;
     border: 3px solid black;
     display: none;
@@ -107,7 +111,6 @@ h1 {
     0%{left:700px;}
     100%{left:-10px;}
 }
-
 
 #pipe {
     width: 80px;
